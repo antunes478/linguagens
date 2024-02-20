@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide Fullscreen</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        background-color: #000;
+        color: #fff;
+        font-size: 30px;
+    }
+    .slider-container {
+        width: 50%; /* Define a largura para ocupar metade da tela */
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto; /* Centraliza horizontalmente */
+    }
+    .slides {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    .slide {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .slide-content {
+        max-width: 80%;
+        margin: 0 auto; /* Centraliza horizontalmente */
+    }
+    .slide img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    .controls {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    .control-btn {
+        cursor: pointer;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+
+<div class="slider-container">
+    <div class="slides">
+        <!-- Slides com o conteúdo separado -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>Linguagens Embarcadas</h1>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-content">
+                <h2>O que são Sistemas Embarcados?</h2>
+                <p>Os sistemas embarcados são sistemas de computação dedicados a uma função específica, incorporados em dispositivos físicos ou sistemas maiores. Eles são comuns em eletrônicos de consumo, dispositivos médicos, automóveis, eletrodomésticos, sistemas de controle industrial, entre outros.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Características dos Sistemas Embarcados:</h2>
+                <ul>
+                    <li>Recursos Limitados: Geralmente possuem recursos limitados, incluindo memória, capacidade de processamento e energia.</li>
+                    <li>Tarefas Específicas: São projetados para executar tarefas específicas de forma eficiente e confiável.</li>
+                    <li>Tempo Real: Muitos sistemas embarcados operam em tempo real, o que significa que devem responder a eventos em tempo hábil e previsível.</li>
+                    <li>Conectividade: Cada vez mais, sistemas embarcados estão sendo projetados para se comunicarem entre si e com sistemas externos, exigindo suporte para diferentes protocolos de comunicação.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-content">
+                <h2>O que são Linguagens Embarcadas?</h2>
+                <p>As linguagens embarcadas são linguagens de programação projetadas para desenvolver software em sistemas embarcados. Elas são otimizadas para lidar com as restrições de hardware e os requisitos específicos dos sistemas embarcados.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Tipos de Linguagens Embarcadas:</h2>
+                <ul>
+                    <li>Linguagens de Alto Nível: Incluem C, C++, Python, Rust, entre outras. Oferecem abstração de hardware e facilidades de programação de alto nível.</li>
+                    <li>Linguagens de Baixo Nível: Como Assembly, fornecem um controle detalhado sobre o hardware, mas são menos portáveis e mais difíceis de programar.</li>
+                    <li>Linguagens Específicas do Domínio (DSLs): São linguagens projetadas para resolver problemas específicos em um determinado domínio, como VHDL para descrição de hardware ou SQL para manipulação de banco de dados.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Desenvolvimento em Linguagens Embarcadas:</h2>
+                <ul>
+                    <li>Ambiente de Desenvolvimento: Requer ferramentas específicas, como compiladores cruzados e depuradores, adaptados para lidar com as restrições de recursos dos sistemas embarcados.</li>
+                    <li>Acesso ao Hardware: Permite acesso direto e controle sobre o hardware do sistema, incluindo manipulação de periféricos, gerenciamento de interrupções e comunicação com outros dispositivos.</li>
+                    <li>Otimização de Código: É necessário otimizar o código para garantir o uso eficiente dos recursos limitados disponíveis nos sistemas embarcados.</li>
+                    <li>Testes e Depuração: Devido às restrições de hardware, os testes e a depuração são fundamentais para garantir a qualidade e a confiabilidade do software embarcado.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Portabilidade e Reusabilidade:</h2>
+                <ul>
+                    <li>Portabilidade de Código: As linguagens embarcadas visam fornecer portabilidade de código entre diferentes plataformas de hardware, desde que elas suportem as mesmas interfaces de hardware.</li>
+                    <li>Reusabilidade de Componentes: Bibliotecas portáteis e abstrações de hardware facilitam a reutilização de código em diferentes projetos e plataformas.</li>
+                    <li>Frameworks e SDKs: O uso de frameworks e kits de desenvolvimento de software (SDKs) pode acelerar o desenvolvimento e garantir a compatibilidade com plataformas específicas.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Aplicações das Linguagens Embarcadas:</h2>
+                <ul>
+                    <li>Desenvolvimento de Dispositivos Eletrônicos: As linguagens embarcadas são usadas no desenvolvimento de uma ampla variedade de dispositivos eletrônicos, incluindo dispositivos médicos, automóveis, eletrodomésticos, sistemas de controle industrial, entre outros.</li>
+                    <li>Internet das Coisas (IoT): Com o aumento da conectividade, as linguagens embarcadas desempenham um papel importante no desenvolvimento de dispositivos IoT, permitindo a coleta, o processamento e o envio de dados para a nuvem.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Sistemas Operacionais Embarcados:</h2>
+                <ul>
+                    <li>Além das linguagens de programação, os sistemas embarcados muitas vezes requerem um sistema operacional embarcado para gerenciar recursos e fornecer serviços essenciais, como gerenciamento de memória, agendamento de tarefas e suporte a dispositivos.</li>
+                    <li>Exemplos de sistemas operacionais embarcados incluem FreeRTOS, Embedded Linux, Micrium µC/OS, entre outros.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Conclusão:</h2>
+                <p>As linguagens embarcadas desempenham um papel crucial no desenvolvimento de sistemas embarcados, permitindo o controle eficiente e confiável de hardware e facilitando o desenvolvimento de uma ampla variedade de dispositivos eletrônicos. Elas são adaptadas para atender às necessidades específicas e restrições dos sistemas embarcados, proporcionando eficiência, portabilidade e facilidade de desenvolvimento.</p>
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+        <!-- Botões de controle -->
+        <button class="control-btn" onclick="currentSlide(1)">1</button>
+        <button class="control-btn" onclick="currentSlide(2)">2</button>
+        <button class="control-btn" onclick="currentSlide(3)">3</button>
+        <button class="control-btn" onclick="currentSlide(4)">4</button>
+        <button class="control-btn" onclick="currentSlide(5)">5</button>
+        <button class="control-btn" onclick="currentSlide(6)">6</button>
+        <button class="control-btn" onclick="currentSlide(7)">7</button>
+        <button class="control-btn" onclick="currentSlide(8)">8</button>
+        <button class="control-btn" onclick="currentSlide(9)">9</button>
+        <button class="control-btn" onclick="currentSlide(10)">10</button>
+        <!-- Adicione mais botões conforme o número de seções -->
+      
+    </div>
+</div>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide() {
+        slides.forEach(slide => {
+            slide.style.display = 'none';
+        });
+        slides[slideIndex].style.display = 'flex'; // Alterado para 'flex' para centralizar o conteúdo
+    }
+
+    function currentSlide(n) {
+        slideIndex = n - 1;
+        showSlide();
+    }
+
+    showSlide(); // Exibe o primeiro slide ao carregar a página
+</script>
+
+</body>
+</html>
